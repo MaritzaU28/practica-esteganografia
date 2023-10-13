@@ -60,7 +60,7 @@ function verificarDatosLogin() {
     } else {
         Swal.fire({ icon: 'success', title: 'Acceso concedido...', toast: true, position: 'top', showConfirmButton: false, timer: 3000 });
         window.sessionStorage.setItem('Acceso', true);
-        setTimeout(() => { window.location.href = './cifrado.html' }, 3200)
+        setTimeout(() => { window.location.href = 'https://maritzau28.github.io/practica-esteganografia/cifrado.html' }, 3200)
     }
 }
 
