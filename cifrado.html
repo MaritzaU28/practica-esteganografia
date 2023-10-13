@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifrado</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="icon" href="./maxwellEncriptadorPNG.png" type="image/x-icon">
+</head>
+</head>
+
+<body style="background: #87CEEB;">
+    <div hidden>
+        <h1>Cifrado y Descifrado</h1>
+        <textarea id="mensaje" placeholder="Escribe tu mensaje aquí"></textarea>
+        <button onclick="cifrarMensaje()">Cifrar</button>
+        <button onclick="descifrarMensaje()">Descifrar</button>
+        <p>Mensaje cifrado: <span id="mensajeCifrado"></span></p>
+        <p>Mensaje descifrado: <span id="mensajeDescifrado"></span></p>
+        <h1>------------------------------------------------------------------------------------</h1>
+    </div>
+
+    <div class="container animate__animated animate__fadeInDown pt-5">
+
+        <div class="card">
+            <div class="card-header bg-primary">
+                <h2 class="text-center text-white">Esteganografía</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+
+                    <div class="col-md-6">
+
+                        <div class="input-group mb-3">
+                            <input type="file" name="pic" accept="image/*" class="form-control" onchange="readURL(this);" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Mensaje a cifrar" id="text" />
+                            <button class="btn btn-outline-primary" onclick="hideText()" type="button" data-mdb-ripple-color="dark">Cifrar texto</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="img1">
+                            <div class="card">
+                                <div class="card-header bg-danger">
+                                    <h5 class="text-center text-white">Imagen a cifrar</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-center">
+                                        <img id="image1" src="" alt="" style="width: 50%;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="">
+
+                            <div class="card">
+                                <div class="card-header bg-success">
+                                    <h5 class="text-center text-white">Imagen Cifrada</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-center">
+                                        <img id="image2" src="" alt="" style="width: 50%;" />
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="d-flex justify-content-center">
+                                        <button onclick="descargarImagen()" class="btn btn-outline-success">Descargar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="d-flex justify-content-center">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header bg-secondary">
+                                    <h5 class="text-center">Descifrar texto</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="input-group mb-3">
+                                        <input class="form-control" type="file" name="pic" accept="image/*" onchange="decode(this);" />
+                                    </div>
+                                    <img class="opa" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+                                </div>
+                                <div class="card-footer">
+                                    <h3 class="text-center">Texto descifrado:</h3>
+                                    <h4 class="text-center text-primary" id="decoded"></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.3.0/crypto-js.js"></script>
+    <script type="text/javascript" src="./steganography.js"></script>
+    <script src="./cifrados.js"></script>
+</body>
+
+</html>
